@@ -1,0 +1,213 @@
+:root {
+    --primary-color: #3b82f6; /* 清新蓝 */
+    --hover-color: #2563eb;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-sub: #6b7280;
+    --border-radius: 12px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 头部样式 */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 0.8s ease;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.header p {
+    color: var(--text-sub);
+    margin-top: 0.5rem;
+}
+
+/* 上传区样式 */
+.search-panel {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.upload-zone {
+    border: 2px dashed #e5e7eb;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-content {
+    transition: opacity 0.25s ease;
+    z-index: 1;
+}
+
+.upload-zone:hover {
+    border-color: var(--primary-color);
+    background-color: #eff6ff;
+}
+
+.upload-zone.dragover {
+    background-color: #e0e7ff;
+    border-color: var(--primary-color);
+}
+
+.icon-cloud {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.sub-text {
+    font-size: 0.875rem;
+    color: var(--text-sub);
+    margin-top: 0.5rem;
+}
+
+.preview-img {
+    max-height: 200px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    object-fit: contain;
+    /* 覆盖掉 upload-content */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 10;
+}
+
+.controls {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--hover-color);
+}
+
+.btn-primary:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* 结果网格 */
+.results-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+    border: 1px solid transparent;
+}
+
+.result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: #e5e7eb;
+}
+
+.result-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #f3f4f6;
+}
+
+.result-info {
+    padding: 1rem;
+}
+
+.score-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.loading {
+    text-align: center;
+    color: var(--text-sub);
+    padding: 2rem;
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #e5e7eb;
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

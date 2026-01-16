@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>以图搜图 | Visual Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header class="header">
+            <h1>Image Search</h1>
+            <p>上传图片，发现相似瞬间</p>
+        </header>
+
+        <!-- 搜索控制区 -->
+        <div class="search-panel">
+            <div class="upload-zone" id="drop-zone">
+                <input type="file" id="file-input" accept="image/*" style="display:none;">
+                <div class="upload-content">
+                    <div class="icon-cloud">☁️</div>
+                    <p>点击或拖拽上传图片</p>
+                    <span class="sub-text">支持 JPG, PNG, WEBP</span>
+                    <div style="margin-top:12px;"><button id="choose-btn" class="btn-primary">选择图片</button></div>
+                </div>
+                <!-- 预览图 -->
+                <img id="preview-img" class="preview-img" hidden alt="预览图">
+            </div>
+            
+            <div class="controls">
+                <label for="limit-input">返回数量:</label>
+                <input type="number" id="limit-input" value="5" min="1" max="50">
+                <button id="search-btn" class="btn-primary" disabled>开始搜索</button>
+            </div>
+        </div>
+
+        <!-- 结果展示区 -->
+        <div id="results-area" class="results-area">
+            <!-- 结果将通过 JS 插入这里 -->
+        </div>
+        
+        <div id="loading" class="loading" hidden>
+            <div class="spinner"></div> 正在搜索...
+        </div>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
