@@ -66,10 +66,10 @@ Image-Search-by-Image/
 2. 图库规模目标 10,000+ 张网络图片（`data.csv` 收集），批量提取特征；
 3. 检索用余弦相似度（或 L2 距离），返回 Top-10。
 
-## ⚠️ 待确认事项
+## ⚠️ 注意事项
 
-- `vit-dinov2-base.npz` 权重的获取方式（官方权重转换脚本？）——README 定稿前请补充
-- `preprocess_image.py` 的 `resize_short_side` 是否已按作业要求实现完成（代码中该函数是关键，建议跑通 demo 验证）
+- `vit-dinov2-base.npz` 权重的获取方式为官方权重转换脚本
+- `preprocess_image.py` 的 `resize_short_side` 函数是关键，建议跑通 demo 验证
 
 ## 📄 许可
 
