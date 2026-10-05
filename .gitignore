@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 大体积权重与特征文件（可由脚本重新生成，不入库）
+*.npz
+*.npy
+
+# 运行期临时目录
+temp_uploads/
+
+# 虚拟环境
+venv/
+.venv/
+
+# 系统文件
+.DS_Store

@@ -1,0 +1,6 @@
+# Image Search by Image 依赖（纯 NumPy DINOv2）
+# 对应 README「环境依赖」：pip install flask numpy scipy pillow
+flask>=2.2.0
+numpy>=1.24.0
+scipy>=1.11.0
+Pillow>=9.0.0
